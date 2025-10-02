@@ -1,0 +1,42 @@
+thead, tbody,th,tr,td{
+    border: solid black 1px;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.5rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+p {
+    margin: 0;
+}
+.Hora{
+    background: #f1f1f1;
+}
+
+.HoraLibre{
+    background: #cde7eb;
+
+}
+#lunes{
+    background: #ffacac;
+}
+#martes{
+    background: #ffe3bf;
+}
+#miercoles{
+    background: #eeffb3;
+}
+#jueves{
+    background: #b3ffba;
+}
+#viernes{
+    background: hsl(229, 100%, 90%);
+}
+
+dt{
+    display: inline;
+    font-weight: bold;
+}
+dd{
+    display: inline;
+    margin: 2px;
+}
