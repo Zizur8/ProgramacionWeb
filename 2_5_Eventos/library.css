@@ -1,0 +1,375 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html, body {
+  height: 100%;
+    margin-top: 60px;
+}
+main{
+    width: 100%;
+    height: 100%;
+    padding-top: 1%;
+}
+
+/*Encabezado nav*/
+header{
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 10%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #8b6b62;
+}
+
+@media screen and (max-width: 800px) {
+    header{
+        padding-left: 20px;
+        padding-right: 20px;
+        justify-content: center;
+        
+    }
+    .info-nav-actions{
+        display: none;
+    }
+
+    .senda-vs{
+        width: auto;
+        margin: 10px;
+        font-size: 1em;
+    }
+
+    
+    #search-input
+    {
+        width: 90%;
+    }
+
+    #search-container {
+        margin: 20px;
+    }
+
+    
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        justify-content: center;
+    }
+        .info-nav-actions{
+        display: none;
+    }
+
+    #search-input{
+        justify-content: center;
+    }
+
+    .senda-vs {
+        display: none;
+    }
+}
+.nav-actions #last-update-book{
+    color: #eee9e9;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.info-nav-actions{
+    margin: 5px;
+}
+
+.senda-vs{
+    margin: 20px;
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 3em;
+    color: aliceblue;
+}
+
+/*Barra de busqueda*/
+#search-container{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    gap: 8px;
+}
+
+.search-box{
+    position: relative;
+}
+
+#search-input {
+    width: 400px;
+    padding: 8px 36px 8px 12px;
+    border-radius: 15px;
+    border: 2px solid #ccc;
+    box-shadow: 1px 5px rgba(85, 85, 85, 0.2);
+    font-size: 1em;
+}
+
+.search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    color: #888;
+}
+/*-----------------------*/
+
+#form-addBook-content{
+
+    position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centrado exacto */
+
+    width: 50%;
+    height: 70%;
+
+    background-color: #eee9e9;
+
+    display: grid;
+
+
+    grid-template-rows: 10% auto 10%;
+
+    border: solid 1px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    padding: 20px;
+
+
+    z-index: 1000;
+}
+
+#form-addBook-header{
+    width: 100%;
+
+    padding: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: x-large;
+
+}
+
+#form-addBook-body{
+
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    padding: 0 3% 0 3%;
+    grid-template-columns: repeat(2, 1fr);
+
+    #form-addBook-left{
+        height: 100%;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: left;
+        flex-direction: column;
+        flex-wrap: wrap;
+        
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 1.5em;
+        border-right: solid 1px black;
+    }
+
+    #form-addBook-right{
+        height: 100%;
+        width: 100%;
+                display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+#form-addBook-footer{
+    width: 100%;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.titleBook{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5em;
+    color: rgb(46, 40, 32);
+}
+
+#container-cards{
+    width: 90%;
+    padding: 0 5% 0 5%;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px 40px;
+
+}
+.cardBook{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 15px;
+    background: #eee9e9;
+
+    /*display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;*/
+
+
+}
+.image-card{
+    width: 60%;
+    height: auto;
+    padding-top: 10px;
+    margin: 0 auto;
+}
+
+.image-card img{
+    width: 100%;
+    border-radius: 10px;
+}
+.top-card{
+    display: grid;
+    grid-template-columns: 90% 10%;
+    grid-template-rows: 1fr;
+}
+.center-content-card{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+/*Card*/
+.info-card-book{
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4,auto-fill);
+}
+.footer-card{
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.favoritePhrase-card{
+    margin-top: 3%;
+}
+
+/*Botones de acciones en esquina inferior derecha*/
+#actions-buttons{
+    width: 5%;
+
+    position: fixed;
+    bottom: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+#closeFormNewBook{
+    width: 50px;
+    height: 50%;
+    border: none;
+    border-radius: 20px;
+        margin: 5px;
+    padding: 8px 15px;
+    background-color: #926c6c;
+    padding: 8px;
+    border-radius:5px;
+}
+.button-action{
+    width: auto;
+    height: 50%;
+    padding: 8px;
+    border-radius:5px;
+}
+
+.button-style{
+    background: #ac977c;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 5px;
+    padding: 8px 15px;
+    width: 150px;
+}
+
+
+#img-cover-preview{
+    width: 80%;
+    height: 100%;
+
+
+    background: #926c6c;
+    border-radius: 10px;
+
+}
+
+.input-style{
+
+    padding: 2px 5px;
+    border: solid 1px #888;
+    border-radius: 10px;
+    width: 60%;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 0.7em; 
+        font-style: italic;   
+
+    
+}
+    .input-radio{
+        width: 10%;
+        height: 10%;
+    }
+
+
+
+/* Aplica a todo el documento */
+::-webkit-scrollbar {
+  width: 10px; /* ancho del scroll */
+}
+
+/* Fondo de la barra */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Parte que se mueve */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Cuando pasas el mouse encima */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
