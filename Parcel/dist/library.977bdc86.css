@@ -1,0 +1,325 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  margin-top: 60px;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  padding-top: 1%;
+}
+
+header {
+  z-index: 100;
+  background: #8b6b62;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  position: fixed;
+  top: 0;
+}
+
+@media screen and (width <= 800px) {
+  header {
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .info-nav-actions {
+    display: none;
+  }
+
+  .senda-vs {
+    width: auto;
+    margin: 10px;
+    font-size: 1em;
+  }
+
+  #search-input {
+    width: 90%;
+  }
+
+  #search-container {
+    margin: 20px;
+  }
+}
+
+@media screen and (width <= 600px) {
+  header {
+    justify-content: center;
+  }
+
+  .info-nav-actions {
+    display: none;
+  }
+
+  #search-input {
+    justify-content: center;
+  }
+
+  .senda-vs {
+    display: none;
+  }
+}
+
+.nav-actions #last-update-book {
+  color: #eee9e9;
+  font-family: Franklin Gothic Medium, Arial Narrow, Arial, sans-serif;
+}
+
+.info-nav-actions {
+  margin: 5px;
+}
+
+.senda-vs {
+  color: #f0f8ff;
+  margin: 20px;
+  font-family: Franklin Gothic Medium, Arial Narrow, Arial, sans-serif;
+  font-size: 3em;
+}
+
+#search-container {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 20px 0;
+  display: flex;
+}
+
+.search-box {
+  position: relative;
+}
+
+#search-input {
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  width: 400px;
+  padding: 8px 36px 8px 12px;
+  font-size: 1em;
+  box-shadow: 1px 5px #5553;
+}
+
+.search-icon {
+  color: #888;
+  font-size: 1.2em;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+#form-addBook-content {
+  z-index: 1000;
+  background-color: #eee9e9;
+  border: 1px solid;
+  border-radius: 15px;
+  grid-template-rows: 10% auto 10%;
+  width: 50%;
+  height: 70%;
+  padding: 20px;
+  display: grid;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px #0000004d;
+}
+
+#form-addBook-header {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 5px;
+  font-family: Georgia, Times New Roman, Times, serif;
+  font-size: x-large;
+  display: flex;
+}
+
+#form-addBook-body {
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  place-items: center;
+  padding: 0 3%;
+  display: grid;
+
+  & #form-addBook-left {
+    justify-content: center;
+    align-items: left;
+    border-right: 1px solid #000;
+    flex-flow: column wrap;
+    width: 100%;
+    height: 100%;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    font-size: 1.5em;
+    display: flex;
+  }
+
+  & #form-addBook-right {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+}
+
+#form-addBook-footer {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+
+.titleBook {
+  color: #2e2820;
+  font-family: Franklin Gothic Medium, Arial Narrow, Arial, sans-serif;
+  font-size: 1.5em;
+}
+
+#container-cards {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px 40px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: grid;
+}
+
+.cardBook {
+  background: #eee9e9;
+  border: 1px solid #000;
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.image-card {
+  width: 60%;
+  height: auto;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+.image-card img {
+  border-radius: 10px;
+  width: 100%;
+}
+
+.top-card {
+  grid-template-rows: 1fr;
+  grid-template-columns: 90% 10%;
+  display: grid;
+}
+
+.center-content-card {
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  display: grid;
+}
+
+.info-card-book {
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, auto-fill);
+  display: grid;
+}
+
+.footer-card {
+  justify-content: space-between;
+  margin-top: 3%;
+  display: flex;
+}
+
+.favoritePhrase-card {
+  margin-top: 3%;
+}
+
+#actions-buttons {
+  flex-direction: column;
+  width: 5%;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+#closeFormNewBook {
+  background-color: #926c6c;
+  border: none;
+  border-radius: 5px;
+  width: 50px;
+  height: 50%;
+  margin: 5px;
+  padding: 8px;
+}
+
+.button-action {
+  border-radius: 5px;
+  width: auto;
+  height: 50%;
+  padding: 8px;
+}
+
+.button-style {
+  color: #fff;
+  cursor: pointer;
+  background: #ac977c;
+  border: none;
+  border-radius: 20px;
+  width: 150px;
+  margin: 5px;
+  padding: 8px 15px;
+  font-size: 1em;
+}
+
+#img-cover-preview {
+  background: #926c6c;
+  border-radius: 10px;
+  width: 80%;
+  height: 100%;
+}
+
+.input-style {
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 60%;
+  padding: 2px 5px;
+  font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+  font-size: .7em;
+  font-style: italic;
+}
+
+.input-radio {
+  width: 10%;
+  height: 10%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/*# sourceMappingURL=library.977bdc86.css.map */

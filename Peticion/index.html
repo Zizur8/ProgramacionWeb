@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peticiones</title>
+</head>
+
+<body>
+
+    <h1>Chistes de Chuck Norris</h1>
+
+    <button id="btnChisteFetch">FETCH</button>
+    <p id="resultadoFetch"></p>
+    <p id="dataFetch"></p>
+
+    <button id="btnChisteXml">XML</button>
+    <p id="resultadoXML"></p>
+
+    <script>
+        document.getElementById("btnChisteFetch").addEventListener("click", () => {
+            fetch('https://api.chucknorris.io/jokes/random')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    documet.getElementById("dataFetch").textContent = JSON.stringify(data);
+                    document.getElementById("resultadoFetch").textContent = data.value;
+                })
+                .catch(err => console.error("Erroooooooor:", err));
+        });
+
+
+        document.getElementById("btnChisteXml").addEventListener("click", () => {
+            const xhr = new XMLHttpRequest();
+
+            xhr.open("GET", "https://api.chucknorris.io/jokes/random", true);
+
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    const data = JSON.parse(xhr.responseText);
+                    console.log(data);
+                    document.getElementById("resultadoXML").textContent = data.value;
+                } else {
+                    console.error("Error en la solicitud:", xhr.status);
+                }
+            };
+
+            xhr.onerror = function () {
+                console.error("Erroooooooor");
+            };
+
+            xhr.send();
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+thead, tbody, th, tr, td {
+  text-align: center;
+  border: 1px solid #000;
+  padding: 10px;
+  font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+  font-size: 1.5rem;
+}
+
+p {
+  margin: 0;
+}
+
+.Hora {
+  background: #f1f1f1;
+}
+
+.HoraLibre {
+  background: #cde7eb;
+}
+
+#lunes {
+  background: #ffacac;
+}
+
+#martes {
+  background: #ffe3bf;
+}
+
+#miercoles {
+  background: #eeffb3;
+}
+
+#jueves {
+  background: #b3ffba;
+}
+
+#viernes {
+  background: #ccd5ff;
+}
+
+dt {
+  font-weight: bold;
+  display: inline;
+}
+
+dd {
+  margin: 2px;
+  display: inline;
+}
+/*# sourceMappingURL=Parcel.3a01df49.css.map */

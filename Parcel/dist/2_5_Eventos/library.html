@@ -1,0 +1,198 @@
+<!DOCTYPE html><html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/library.977bdc86.css">
+
+  <title>Senda</title>
+</head>
+
+<body>
+
+  <header>
+    <h1 class="senda-vs">SendaVS</h1>
+
+
+    <div id="search-container">
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Buscar Libro...">
+        <span class="search-icon">🔍</span>
+      </div>
+    </div>
+    <p class="info-nav-actions" id="last-update-book">
+      Ultimo libro guardado: La peste Albert Camus 05/03/2025
+    </p>
+  </header>
+
+  <main>
+    <div id="container-cards"></div>
+
+    <div id="container-actions-buttons">
+      <div id="actions-buttons">
+        <button class="info-nav-actions button-action" id="addBook" value="" action="openFormNewBook()">
+          Agregar
+        </button>
+        <button class="info-nav-actions button-action" id="deleteBook" value="">
+          Eliminar
+        </button>
+        <button class="info-nav-actions button-action" id="settings" value="">
+          Configuración
+        </button>
+      </div>
+    </div>
+
+
+    
+
+
+  </main>
+
+  <footer></footer>
+
+  <template id="cardBook-template">
+    <div class="cardBook">
+
+      <div class="info-card-book">
+
+        <div class="top-card">
+          <div>
+            <h3 class="titleBook">La senda del perdedor</h3>
+            <h4>Charles Bukowski</h4>
+          </div>
+          <div>
+            <div><button>❤️</button></div>
+          </div>
+        </div>
+
+
+        <div class="center-card">
+
+          <div class="center-content-card">
+
+            <div class="image-card">
+              <img class="imageBook" src="/senda_del_perdedor.1730113f.webp" alt="senda_del_perdedor">
+            </div>
+
+
+
+          </div>
+
+          <div class="favoritePhrase-card">
+            <p><b>Nota Favorita</b></p>
+            <p class="">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Perspiciatis dolor maxime, omnis repudiandae, culpa fugiat
+              accusantium incidunt magnam architecto voluptates similique a
+              voluptate veniam! Suscipit consequuntur totam ea voluptatem magnam!
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="footer-card">
+          <span>Pags.356</span>
+          <span>Costo: $399</span>
+          <span>Terminado: 09/Sep/2025</span>
+        </div>
+
+      </div>
+    </div>
+  </template>
+
+  <template id="form-new-book-template">
+    <form id="form-addBook-content" action="https://httpbin.org/post" method="post" enctype="multipart/form-data">
+
+      <div id="form-addBook-header">
+        <h2>Nuevo Libro</h2>
+        <!--<button type="button" id="closeFormNewBook">X</button>-->
+      </div>
+
+      <div id="form-addBook-body">
+        <div id="form-addBook-left">
+
+          <div>
+            <label>Titulo</label><br>
+            <input class="input-style input-text" type="text" name="titulo" placeholder="Senda del perdedor">
+          </div>
+
+
+          <div>
+            <label>Autor</label><br>
+            <input class="input-style input-text" name="autor" type="text" placeholder="Charles Bukowski">
+          </div>
+
+          <div>
+            <label>Editorial</label><br>
+            <input class="input-style input-text" name="editorial" type="text" placeholder="Anagrama">
+          </div>
+
+          <div>
+            <label for="Idioma">Idioma</label><br>
+            <select class="input-style" name="Idioma">
+              <option value="es" selected="">Español</option>
+              <option value="en">Inglés</option>
+            </select>
+          </div>
+
+          <div>
+            <label>Kant. Pag</label><br>
+            <input class="input-style" name="paginas" type="number" placeholder="365">
+          </div>
+
+
+          <div>
+            <div>
+              <label>Regalado</label>
+              <input type="radio" name="regalado" value="false">
+              
+            </div>
+
+
+            <div>
+              <label for="">Adquerido</label><br>
+              <select class="input-style" name="lugarConseguido" id="">
+                <option value="ML">Mercado Libre</option>
+                <option value="AZ">Amazon</option>
+                <option value="BL">Busca Libre</option>
+                <option value="Tls">Talamas</option>
+              </select>
+            </div>
+
+
+            <div>
+              <label>Costo</label><br>
+              <input class="input-style" type="number" name="costo" placeholder="Costo">
+            </div>
+
+
+          </div>
+        </div>
+
+        <div id="form-addBook-right">
+
+          <div id="img-preview-container">
+
+            <input type="file" id="portada-img" name="portada" accept=".jpg, .jpeg, .png">
+            <img id="img-cover-preview" src="#" alt="Vista previa de la portada">
+          </div>
+
+
+
+        </div>
+      </div>
+
+
+
+      <div id="form-addBook-footer">
+        <button id="button-submit-newBook" class="button-style" type="submit">Guardar</button>
+      </div>
+
+    </form>
+  </template>
+
+  
+
+  <script src="/library.a427607a.js"></script>
+
+
+<script src="/library.4562be5f.js"></script></body></html>
