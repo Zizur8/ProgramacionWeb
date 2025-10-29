@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./main.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="">
+            <div id="nav-container">
+                <div id="dropdown-menu" class="">
+                    <button class="" type="button" onclick="toggleDropdown()">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+                <div id="last-update">
+                    <h3>15 Febrero</h3>
+                    <p id="info-ultimo-registro">Ultimo registro: Victor H.</p>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <aside id="aside-app">
+        <div>
+            <ul id="modulos-list">
+                <li><a href="#">Clientes</a></li>
+                <li><a href="#">Movimientos</a></li>
+                <li><a href="#">Reportes</a></li>
+                <li><a href="#">Usuarios</a></li>
+
+            </ul>
+        </div>
+        <div id="buttons-container-aside">
+            <button class="button-icons-aside">
+                <i class="fa-solid fa-user"></i>
+            </button>
+            <button class="button-icons-aside">
+                <i class="fa-solid fa-gear"></i>
+        </div>
+    </aside>
+    <main>
+
+
+        <div id="agenda-calendario-" class="calendar-container">
+            <div class="calendar-header">
+                <button class="nav-button" onclick="previousMonth()">‹</button>
+                <div class="month-year" id="monthYear"></div>
+                <button class="nav-button" onclick="nextMonth()">›</button>
+            </div>
+
+            <div class="calendar-grid">
+                <div class="weekdays">
+                    <div class="weekday">Dom</div>
+                    <div class="weekday">Lun</div>
+                    <div class="weekday">Mar</div>
+                    <div class="weekday">Mié</div>
+                    <div class="weekday">Jue</div>
+                    <div class="weekday">Vie</div>
+                    <div class="weekday">Sáb</div>
+                </div>
+                <div class="days-grid" id="daysGrid"></div>
+            </div>
+
+        </div>
+
+        <div id="date-info-container" style="visibility: hidden;">
+            <div id="header-date-info">
+                <div>
+                    <h2 id="selectedDate">16 Octubre</h2>
+                </div>
+                <div id="right-header">
+                    <h4>4:00pm - 12:00am</h4>
+                    <span id="mini-decorar" class="mini-info-labels">Decorar</span>
+                    <span id="mini-status-liquidado" class="mini-info-labels">Liquidado</span>
+                </div>
+
+
+
+            </div>
+            <div id="body-date-info">
+                <div id="cliente-date-info" class="section-date-info">
+                    <h4 class="title-section-date-info"><span>Cliente</span></h4>
+
+                    <div class="input-wrapper">
+                        <label class="label-input">Nombre</label><br>
+                        <input class="input-text autoInput" type="text" value="Cesar Alejandro Vazquez Soto"
+                            oninput="ajustarAncho()">
+                        <span class="medidor"></span><br>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label class="label-input">Dirección</label><br>
+                        <input class="input-text autoInput" type="text" value="Reforma 2007 Sur. Colonia Fundadores"
+                            oninput="ajustarAncho()">
+                        <span class="medidor"></span><br>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label class="label-input">Teléfono</label><br>
+                        <input class="input-text autoInput" type="text" value="867 326 4533" oninput="ajustarAncho()">
+                        <span class="medidor"></span><br>
+                    </div>
+                </div>
+
+
+                <div class="section-date-info">
+                    <h4 class="title-section-date-info"><span>Evento</span></h4>
+
+
+                    <div class="input-wrapper">
+                        <label class="label-input">Costo</label><br>
+                        <input class="input-text autoInput" type="text" value="$2,500" oninput="ajustarAncho()">
+                        <span class="medidor"></span><br>
+                    </div>
+
+
+                    <div class="input-wrapper">
+                        <label class="label-input">Ultimo Anticipo</label><br>
+                        <input class="input-text autoInput" type="text" value="$1,700" oninput="ajustarAncho()">
+                        <span class="medidor"></span><br>
+                    </div>
+
+
+                </div>
+
+                <div id="nota-date-info" class="">
+                    <h4 class="title-section-date-info"><span>Notas</span></h4>
+                    <textarea name="" id="">Primeras fases del diseño del view</textarea>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+
+
+
+    <template id="template-calendario-agenda">
+        <div id="agenda-calendario-" class="calendar-container">
+            <div class="calendar-header">
+                <!-- <button class="nav-button" onclick="previousMonth()">‹</button> -->
+                <div class="month-year" id="monthYear"></div>
+                <!-- <button class="nav-button" onclick="nextMonth()">›</button> -->
+            </div>
+
+            <div class="calendar-grid">
+                <div class="weekdays">
+                    <div class="weekday">Dom</div>
+                    <div class="weekday">Lun</div>
+                    <div class="weekday">Mar</div>
+                    <div class="weekday">Mié</div>
+                    <div class="weekday">Jue</div>
+                    <div class="weekday">Vie</div>
+                    <div class="weekday">Sáb</div>
+                </div>
+                <div class="days-grid" id="daysGrid"></div>
+            </div>
+
+        </div>
+    </template>
+
+
+    <div id="bg-translucent"></div>
+    <div id="form-new-evento" class="form-new-event-container">
+
+        <form id="formEvento" class="form-content">
+            <h2 class="title-section-date-info">Agendar Nuevo Evento</h2>
+            <h3>23/Oct/2025 - 24/Oct/2025</h3>
+
+            <label for="horaInicio">Hora de Inicio</label>
+            <input type="datetime-local" id="horaInicio" name="horaInicio" >
+
+            <label for="horaFin">Hora de Fin</label>
+            <input type="datetime-local" id="horaFin" name="horaFin" >
+
+            <p>El evento ocupa dos dias seguidos por lo tanto asegurese de seleccionar adecuadamente el rango
+                del horario.
+            </p>
+            <div id="input-horario-evento-container">
+
+
+                <label for="">Decorar</label>
+                <input type="checkbox" id="decorar" name="decorar" checked>
+                <label for="">Especial</label>
+                <input type="checkbox" id="especial" name="especial">
+
+                <label for="saldo">Horas Extras</label>
+                <input type="number" id="horasExtras" name="horasExtras" step="1" min="0" max="100">
+                <label for="saldo">Costo P/Hora</label>
+                <input type="number" id="horasExtras" name="costoHorasExtras" step="any" min="0" max="9999"
+                    placeholder="$">
+            </div>
+
+
+            <label for="saldo">Costo</label>
+            <input type="number" id="saldo" name="costo" value="$500" min="0" placeholder="$" >
+            <label for="Anticipo">Anticipo</label>
+            <input type="number" id="anticipo" name="anticipo" value="$200" min="0" placeholder="$" >
+            <div id="input-horario-evento-container">
+
+                <label for="">Moneda</label>
+                <select id="moneda" name="moneda">
+                    <option value="MXN" selected>MXN</option>
+                    <option value="USD">USD</option>
+                </select>
+
+                <label for="">Tasa cambio</label>
+                <input type="number" id="tasaCambio" name="tasaCambio" step="any" min="0" max="9999" value="18.50"
+                    placeholder="$">
+
+
+            </div>
+
+
+            <h3 class="title-section-date-info">Cliente</h3>
+            <label for="telefono">Teléfono</label>
+            <input type="text" id="telefono" name="telefono" pattern="[0-9]{10}"
+                title="Debe contener 10 dígitos numéricos." >
+            <label for="correo">Correo</label>
+            <input type="email" id="correo" name="correo" >
+            <label for="direccion">Dirección</label>
+            <input type="text" id="direccion" name="direccion" >
+
+
+            <div id="input-horario-evento-container">
+                <label for="">Colonia</label>
+                <select id="colonia" name="colonia">
+                    <option value="Mirador" selected>Mirador</option>
+
+                </select>
+
+                <label for="Num_Exterior">Num. Exterior</label>
+                <input type="text" id="Num_Exterior" name="numeroExterior" placeholder="#" >
+            </div>
+
+
+            <label for="nombreCliente">Nombre</label>
+            <input type="text" id="nombreCliente" name="nombreCliente" >
+            <label for="">Apellido Paterno</label>
+            <input type="text" id="apellidoPaterno" name="apellidoPaternoCliente" >
+            <label for="">Apellido Materno</label>
+            <input type="text" id="apellidoMaterno" name="apellidoMaternoCliente" >
+
+
+
+            <div id="nota-date-info" class="">
+                <h4 class="title-section-date-info"><span>Notas</span></h4>
+                <textarea name="nota" id="">Primeras fases del diseño del view</textarea>
+            </div>
+
+            <button id="" type="submit">Guardar Evento</button>
+            <button type="button" id="btnEnviarJQuery">Enviar con jQuery</button>
+
+        </form>
+
+    </div>
+
+</body>
+<script src="./main.js"></script>
+<script src="https://kit.fontawesome.com/4def35e11d.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
+
+</html>
